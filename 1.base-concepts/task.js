@@ -14,42 +14,45 @@ function solveEquation(a, b, c) {
 
 function calculateTotalMortgage(percent, contribution, amount, date) {
 
-  // код для задачи №2 писать здесь
+  // код для задачи №2 писать здес
 
-  // if(typeof percent !== 'number'){
-  //   console.log("lazha");
-  // }
+  let paramNames = ['percent', 'contribution', 'amount', 'date']
+
+  let args = Array.from(arguments);
+
+  for(let i = 0; i < args.length - 1; i++){
+
+    let arg = Number(args[i]);
+
+    if (isNaN(arg)){
+      let valName = paramNames[i];
+      let val = args[i];
+
+      return `Параметр ${valName} содержит неправильное значение ${val}`;
+
+    }
+  }
 
 
-  // console.log(a);
-  //
-  // let args = Array.from(arguments);
-  //
-  // for(let i = 0; i < args.length - 1; i++){
-  //   if (typeof args[i] !== 'number'){
-  //     let valName = this;
-  //     let val = args[i];
-  //
-  //     console.log(`Параметр ${valName} содержит неправильное значение ${val}`);
-  //   }
-  // }
+  let currentMonth = new Date().getMonth();
 
+  let currentYear = new Date().getFullYear();
 
-  let currentDate = new Date();
+  let yearDiff = date.getFullYear() - currentYear;
+
+  let n = yearDiff * 12 - currentMonth + date.getMonth();
 
   let S = amount - contribution;
 
-  let P = percent / 100 * (1 / 12);
-
-  let n = (date - currentDate) / 1000 / 60 / 60 / 24 / 30;
-
-  n = Math.round(n);
+  let P = percent / 100 / 12;
 
   let monthPayment = S * (P + (P / (((1 + P)**n) - 1)));
 
   let totalAmount = monthPayment * n;
 
   totalAmount = totalAmount.toFixed(2);
+
+  console.log(totalAmount);
 
   return totalAmount;
 }
