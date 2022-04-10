@@ -16,7 +16,7 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
 
   // код для задачи №2 писать здес
 
-  let paramNames = ['percent', 'contribution', 'amount', 'date']
+  let paramNames = ['Процентная ставка', 'Начальный взнос', 'Общая стоимость', 'date']
 
   let args = Array.from(arguments);
 
@@ -28,7 +28,7 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
       let valName = paramNames[i];
       let val = args[i];
 
-      return `Параметр ${valName} содержит неправильное значение ${val}`;
+      return `Параметр "${valName}" содержит неправильное значение "${val}"`;
 
     }
   }
@@ -52,7 +52,17 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
 
   totalAmount = totalAmount.toFixed(2);
 
+  totalAmount = Number(totalAmount);
+
   console.log(totalAmount);
 
   return totalAmount;
 }
+
+
+var seven = 7;
+
+function takeFive() {  return 5;}
+
+console.log(seven); // 5
+// console.log(window.seven); // тоже 5console.log(takeFive()); // 5console.log(window.takeFive());
