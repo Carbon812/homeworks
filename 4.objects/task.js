@@ -6,7 +6,7 @@ function Student(name, gender, age) {
 }
 
 Student.prototype.setSubject = function (subjectName) {
-  //ваш код
+    //ваш код
     this.subject = subjectName;
 }
 
@@ -14,7 +14,7 @@ Student.prototype.setSubject = function (subjectName) {
 
 Student.prototype.addMark = function (mark) {
     //ваш код
-    if(this.marks === undefined){
+    if (this.marks === undefined) {
         // добавить первую оценку
         this.marks = [mark];
     } else {
@@ -25,14 +25,13 @@ Student.prototype.addMark = function (mark) {
 
 Student.prototype.addMarks = function (...mark) {
     //ваш код
-    if(this.marks === undefined){
-        // добавить первую оценку
+    if (this.marks === undefined) {
+        // добавить первый массив оценок
         this.marks = mark;
     } else {
-        // добавить вторую и последующие оценки в массив
+        // добавить второй и последующий масив оценок
         this.marks = this.marks.concat(mark);
     }
-
 }
 //
 Student.prototype.getAverage = function () {
@@ -47,7 +46,7 @@ Student.prototype.getAverage = function () {
             (previousValue, currentValue) => previousValue + currentValue,
             initialValue
         );
-
+        
         return sumWithInitial / b;
     }
 }
