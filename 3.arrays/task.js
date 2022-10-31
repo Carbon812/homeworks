@@ -2,17 +2,15 @@ function compareArrays(arr1, arr2) {
   let result;
 
   if(arr1.length !== arr2.length){
-    return result = false;
+    return false;
   }
 
-  function isEven(arr1_item) {
-    // for (let i = 0; i < arr2.length; i++) {
-    //
-    // }
+  function isEven(arr1_item, inx) {
 
-    if(arr2[arr1.indexOf(arr1_item)] === arr1_item){
+    if(arr2[(inx)] === arr1_item){
       return true;
     }
+
   }
 
   result = arr1.every(isEven);
