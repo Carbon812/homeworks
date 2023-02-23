@@ -1,10 +1,10 @@
-function cachingDecoratorNew(func) {
+function cachingDecoratorNew(func){
     let cache = [];
 
     function wrapper(...args) {
         const hash = args.join(','); // получаем правильный хэш
         let objectInCache = cache.find((item) => item.hash === hash); // ищем элемент, хэш которого равен нашему хэшу
-        if (objectInCache) { // если элемент не найден
+        if (objectInCache) { // если элемент найден в кеше !!!
             console.log("Из кэша: " + objectInCache.value); // индекс нам известен, по индексу в массиве лежит объект, как получить нужное значение?
             return "Из кэша: " + objectInCache.value;
         }
@@ -28,3 +28,4 @@ function cachingDecoratorNew(func) {
 // function debounceDecorator2(func) {
 //   // Ваш код
 // }
+let a;
